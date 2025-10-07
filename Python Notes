@@ -1,0 +1,30 @@
+## Escape sequence characters
+
+Escape sequence characters in Python are special combinations of characters that begin with a backslash (`\`) and 
+represent certain whitespace, formatting, or control characters.
+They're used inside strings to insert things like new lines, tabs, or special symbols.
+
+| Escape Sequence | Meaning                          | Example Output               |
+|-----------------|----------------------------------|------------------------------|
+| `\n`            | New line                         | `"Hello\nWorld"` → Hello<br>World |
+| `\t`            | Horizontal tab                   | `"Hello\tWorld"` → Hello    World |
+| `\\`            | Backslash                        | `"C:\\Users"` → C:\Users     |
+| `\'`            | Single quote                     | `'It\'s fine'` → It's fine   |
+| `\"`            | Double quote                     | `"She said \"Hi\""` → She said "Hi" |
+| `\r`            | Carriage return                  | `"Hello\rWorld"` → World     |
+| `\b`            | Backspace                        | `"Hell\blo"` → Helo          |
+| `\f`            | Form feed                        | `"Hello\fWorld"` → HelloWorld |
+| `\a`            | Bell (alert sound)               | `"Hello\a"` → (may beep)     |
+| `\v`            | Vertical tab                     | `"Hello\vWorld"` → HelloWorld |
+| `\ooo`          | Octal value                      | `"\101"` → A                 |
+| `\xhh`          | Hexadecimal value                | `"\x41"` → A                 |
+
+---
+
+### 🧪 Example in Code
+```python
+print("Line1\nLine2")
+print("Tabbed\tText")
+print("Quote: \"Hello\"")
+```
+
