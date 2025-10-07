@@ -168,6 +168,56 @@ Compare memory locations:
 - `is not` : Returns `True` if they do not
 
 
+                                                                                         TYPE CASTING IN PYTHON
+
+
+Type casting in Python refers to converting the data type of a variable from one type to another.
+It's useful when you need to perform operations that require specific data types or when you're handling user input.
+
+### 🔄 Types of Type Casting
+
+#### 1. **Implicit Type Casting**
+Python automatically converts one data type to another when it's safe to do so.
+
+```python
+x = 10       # int
+y = 2.5      # float
+result = x + y  # Python converts x to float
+print(result)   # Output: 12.5
+```
+
+#### 2. **Explicit Type Casting**
+You manually convert a variable to a different type using built-in functions.
+
+```python
+# int to float
+a = 5
+b = float(a)
+print(b)  # Output: 5.0
+
+# float to int
+c = 3.9
+d = int(c)
+print(d)  # Output: 3
+
+# string to int
+e = "42"
+f = int(e)
+print(f)  # Output: 42
+
+# int to string
+g = 100
+h = str(g)
+print(h)  # Output: "100"
+```
+
+### ⚠️ Things to Watch Out For
+- Converting a string to an int or float only works if the string is numeric.
+- Converting a float to an int will **truncate** the decimal part, not round it.
+
+
+
+
 
 
 
