@@ -75,3 +75,9 @@ text = "Yellow"  # ✅ Reassign instead
 | `replace()`    | Replaces substring                   | `"hi".replace("h", "b")` → `"bi"`|
 | `split()`      | Splits string into list              | `"a,b,c".split(",")` → `["a","b","c"]`|
 | `find()`       | Finds index of substring             | `"hello".find("e")` → `1`        |
+| capitalize()   | capital first letter                 |  "hello".capitalize() -> Hello   |
+| centre()       | centralize letter                    |  "hello".centre() -> hello(centre page)
+| count()        | show letters count                   |  "hi".count() -> 2               |
+| endswith       | check end is specific                |  "hello ani".endswith(ani) ->true|
+| index()        | check mentioned word in index        |  "that is fine".index(is) ->true |
+
