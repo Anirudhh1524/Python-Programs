@@ -1,0 +1,29 @@
+
+
+### 🧠 What is a Variable?
+A **variable** is a name that refers to a value stored in memory. You can assign a value to a variable using the `=` operator.
+
+python
+name = "Alice"       # string variable
+age = 30             # integer variable
+height = 5.6         # float variable
+is_student = True    # boolean variable
+
+### 🔤 Rules for Naming Variables
+- Must start with a letter or underscore (`_`)
+- Can contain letters, numbers, and underscores
+- Cannot start with a number
+- Case-sensitive (`Name` and `name` are different)
+
+### 📦 Types of Variables
+Python is dynamically typed, so you don’t need to declare the type explicitly:
+- `int` – whole numbers (`10`, `-3`)
+- `float` – decimal numbers (`3.14`, `-0.5`)
+- `str` – text (`"hello"`, `'world'`)
+- `bool` – logical values (`True`, `False`)
+- `list`, `tuple`, `dict`, `set` – collections
+
+### 🔁 You Can Reassign Variables
+python
+x = 5
+x = "hello"  # now x is a string
