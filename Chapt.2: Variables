@@ -20,7 +20,7 @@ Python is dynamically typed, so you don’t need to declare the type explicitly:
 - `int` – whole numbers (`10`, `-3`)
 - `float` – decimal numbers (`3.14`, `-0.5`)
 - `str` – text (`"hello"`, `'world'`)
-- `bool` – logical values (`True`, `False`)
+- `bool` – logical values (`True`, `False`).
 - `list`, `tuple`, `dict`, `set` – collections.
 
 ### 🔁 You Can Reassign Variables
