@@ -5,29 +5,28 @@ Escape sequence characters in Python are special combinations of characters that
 represent certain whitespace, formatting, or control characters.
 They're used inside strings to insert things like new lines, tabs, or special symbols.
 
-| Escape Sequence | Meaning                          | Example Output               |
-|-----------------|----------------------------------|------------------------------|
+| Escape Sequence | Meaning                          | Example Output                    |
+|-----------------|----------------------------------|-----------------------------------|
 | `\n`            | New line                         | `"Hello\nWorld"` → Hello<br>World |
 | `\t`            | Horizontal tab                   | `"Hello\tWorld"` → Hello    World |
-| `\\`            | Backslash                        | `"C:\\Users"` → C:\Users     |
-| `\'`            | Single quote                     | `'It\'s fine'` → It's fine   |
+| `\\`            | Backslash                        | `"C:\\Users"` → C:\Users          |
+| `\'`            | Single quote                     | `'It\'s fine'` → It's fine        |
 | `\"`            | Double quote                     | `"She said \"Hi\""` → She said "Hi" |
-| `\r`            | Carriage return                  | `"Hello\rWorld"` → World     |
-| `\b`            | Backspace                        | `"Hell\blo"` → Helo          |
-| `\f`            | Form feed                        | `"Hello\fWorld"` → HelloWorld |
-| `\a`            | Bell (alert sound)               | `"Hello\a"` → (may beep)     |
-| `\v`            | Vertical tab                     | `"Hello\vWorld"` → HelloWorld |
-| `\ooo`          | Octal value                      | `"\101"` → A                 |
-| `\xhh`          | Hexadecimal value                | `"\x41"` → A                 |
+| `\r`            | Carriage return                  | `"Hello\rWorld"` → World          |
+| `\b`            | Backspace                        | `"Hell\blo"` → Helo               |
+| `\f`            | Form feed                        | `"Hello\fWorld"` → HelloWorld     |
+| `\a`            | Bell (alert sound)               | `"Hello\a"` → (may beep)          |
+| `\v`            | Vertical tab                     | `"Hello\vWorld"` → HelloWorld    |
+| `\ooo`          | Octal value                      | `"\101"` → A                      |
+| `\xhh`          | Hexadecimal value                | `"\x41"` → A                      |
 
----
 
 ### 🧪 Example in Code
-```python
+python
 print("Line1\nLine2")
 print("Tabbed\tText")
 print("Quote: \"Hello\"")
-```
+
 
                                                                                                    VARIABLES IN PYTHON 
 
@@ -35,12 +34,11 @@ print("Quote: \"Hello\"")
 ### 🧠 What is a Variable?
 A **variable** is a name that refers to a value stored in memory. You can assign a value to a variable using the `=` operator.
 
-```python
+python
 name = "Alice"       # string variable
 age = 30             # integer variable
 height = 5.6         # float variable
 is_student = True    # boolean variable
-```
 
 ### 🔤 Rules for Naming Variables
 - Must start with a letter or underscore (`_`)
@@ -57,10 +55,10 @@ Python is dynamically typed, so you don’t need to declare the type explicitly:
 - `list`, `tuple`, `dict`, `set` – collections
 
 ### 🔁 You Can Reassign Variables
-```python
+python
 x = 5
 x = "hello"  # now x is a string
-```
+
 
                                                                                                  DATATYPES IN PYTHON
 
@@ -110,7 +108,6 @@ Used for basic mathematical operations:
 - `%` : Modulus (remainder) (`a % b`)
 - `**` : Exponentiation (`a ** b`)
 
----
 
 ### 🧮 **Comparison Operators**
 Used to compare values:
@@ -121,7 +118,6 @@ Used to compare values:
 - `>=` : Greater than or equal to (`a >= b`)
 - `<=` : Less than or equal to (`a <= b`)
 
----
 
 ### 🔀 **Logical Operators**
 Used to combine conditional statements:
@@ -129,7 +125,6 @@ Used to combine conditional statements:
 - `or` : Returns `True` if at least one statement is true
 - `not` : Reverses the result (`not True` is `False`)
 
----
 
 ### 📦 **Assignment Operators**
 Used to assign values to variables:
@@ -142,7 +137,6 @@ Used to assign values to variables:
 - `%=` : Modulus and assign
 - `**=` : Exponentiate and assign
 
----
 
 ### 🧠 **Bitwise Operators**
 Operate on bits:
@@ -153,14 +147,12 @@ Operate on bits:
 - `<<` : Left shift
 - `>>` : Right shift
 
----
 
 ### 📚 **Membership Operators**
 Check for membership in a sequence:
 - `in` : Returns `True` if value is found
 - `not in` : Returns `True` if value is not found
 
----
 
 ### 🧬 **Identity Operators**
 Compare memory locations:
@@ -179,17 +171,17 @@ It's useful when you need to perform operations that require specific data types
 #### 1. **Implicit Type Casting**
 Python automatically converts one data type to another when it's safe to do so.
 
-```python
+python
 x = 10       # int
 y = 2.5      # float
 result = x + y  # Python converts x to float
 print(result)   # Output: 12.5
-```
+
 
 #### 2. **Explicit Type Casting**
 You manually convert a variable to a different type using built-in functions.
 
-```python
+python
 # int to float
 a = 5
 b = float(a)
@@ -209,11 +201,50 @@ print(f)  # Output: 42
 g = 100
 h = str(g)
 print(h)  # Output: "100"
-```
 
-### ⚠️ Things to Watch Out For
 - Converting a string to an int or float only works if the string is numeric.
 - Converting a float to an int will **truncate** the decimal part, not round it.
+
+
+                                                                       DIFFERENCE: **modules**, **libraries**, **packages**, and **frameworks** 
+
+
+### 🧩 Module
+- A **module** is the smallest unit of code reuse.
+- It’s typically a single file (like `math.py`) containing functions, classes, or variables.
+- Used to organize code into logical chunks.
+- **Example**: `os.py`, `random.py` in Python.
+
+
+### 📚 Library
+- A **library** is a collection of modules or packages that provide specific functionality.
+- You call its functions to perform tasks—**you control the flow**.
+- **Example**: `NumPy` for numerical computing, `Lodash` in JavaScript.
+
+
+### 📁 Package
+- A **package** is a directory that contains multiple modules and an `__init__.py` file (in Python).
+- It helps organize related modules into a namespace.
+- Can include sub-packages.
+- **Example**: `requests` package in Python.
+
+
+### 🏗️ Framework
+- A **framework** is a structured platform for building applications.
+- It includes libraries, tools, and rules for development.
+- **It controls the flow**—you fill in the details (known as *Inversion of Control*).
+- **Example**: `Django` for web apps in Python, `React` for UI in JavaScript.
+
+
+### 🔍 Summary Table
+
+| Term       | Scope                      | Control Flow          | Example           |
+|------------|----------------------------|-----------------------|-----------------  |
+| Module     | Single file                | You control           | `math.py`         |
+| Package    | Folder of modules          | You control           | `requests`        |
+| Library    | Collection of modules/packages | You control       | `NumPy`, `Lodash` |
+| Framework  | Full development structure | Framework controls    | `Django`, `React` |
+
 
 
 
