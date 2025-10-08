@@ -1,0 +1,109 @@
+
+OPERATORS
+
+### 🔢 **Arithmetic Operators**
+Used for basic mathematical operations:
+- `+` : Addition (`a + b`)
+- `-` : Subtraction (`a - b`)
+- `*` : Multiplication (`a * b`)
+- `/` : Division (`a / b`)
+- `//` : Floor Division (`a // b`)
+- `%` : Modulus (remainder) (`a % b`)
+- `**` : Exponentiation (`a ** b`)
+
+
+### 🧮 **Comparison Operators**
+Used to compare values:
+- `==` : Equal to (`a == b`)
+- `!=` : Not equal to (`a != b`)
+- `>` : Greater than (`a > b`)
+- `<` : Less than (`a < b`)
+- `>=` : Greater than or equal to (`a >= b`)
+- `<=` : Less than or equal to (`a <= b`)
+
+
+### 🔀 **Logical Operators**
+Used to combine conditional statements:
+- `and` : Returns `True` if both statements are true
+- `or` : Returns `True` if at least one statement is true
+- `not` : Reverses the result (`not True` is `False`)
+
+
+### 📦 **Assignment Operators**
+Used to assign values to variables:
+- `=` : Assign (`x = 5`)
+- `+=` : Add and assign (`x += 3`)
+- `-=` : Subtract and assign (`x -= 2`)
+- `*=` : Multiply and assign (`x *= 4`)
+- `/=` : Divide and assign (`x /= 2`)
+- `//=` : Floor divide and assign
+- `%=` : Modulus and assign
+- `**=` : Exponentiate and assign
+
+
+### 🧠 **Bitwise Operators**
+Operate on bits:
+- `&` : AND
+- `|` : OR
+- `^` : XOR
+- `~` : NOT
+- `<<` : Left shift
+- `>>` : Right shift
+
+
+### 📚 **Membership Operators**
+Check for membership in a sequence:
+- `in` : Returns `True` if value is found
+- `not in` : Returns `True` if value is not found
+
+
+### 🧬 **Identity Operators**
+Compare memory locations:
+- `is` : Returns `True` if both variables point to the same object
+- `is not` : Returns `True` if they do not
+
+
+TYPE CASTING IN PYTHON
+
+
+Type casting in Python refers to converting the data type of a variable from one type to another.
+It's useful when you need to perform operations that require specific data types or when you're handling user input.
+
+### 🔄 Types of Type Casting
+
+#### 1. **Implicit Type Casting**
+Python automatically converts one data type to another when it's safe to do so.
+
+python
+x = 10       # int
+y = 2.5      # float
+result = x + y  # Python converts x to float
+print(result)   # Output: 12.5
+
+
+#### 2. **Explicit Type Casting**
+You manually convert a variable to a different type using built-in functions.
+
+python
+# int to float
+a = 5
+b = float(a)
+print(b)  # Output: 5.0
+
+# float to int
+c = 3.9
+d = int(c)
+print(d)  # Output: 3
+
+# string to int
+e = "42"
+f = int(e)
+print(f)  # Output: 42
+
+# int to string
+g = 100
+h = str(g)
+print(h)  # Output: "100"
+
+- Converting a string to an int or float only works if the string is numeric.
+- Converting a float to an int will **truncate** the decimal part, not round it.
