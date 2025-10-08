@@ -1,0 +1,32 @@
+
+
+### 🔢 1. **Numeric Types**
+- `int` – Integer numbers
+- `float` – Floating-point numbers
+- `complex` – Complex numbers
+
+### 📄 2. **Text Type**
+- `str` – String (text)
+
+### ✅ 3. **Boolean Type**
+- `bool` – True or False
+
+### 📦 4. **Sequence Types**
+- `list` – Ordered, mutable collection
+- `tuple` – Ordered, immutable collection
+- `range` – Sequence of numbers used in loops
+
+### 🗂️ 5. **Set Types**
+- `set` – Unordered collection of unique elements
+- `frozenset` – Immutable version of a set
+
+### 🔑 6. **Mapping Type**
+- `dict` – Key-value pairs
+
+### 🧪 7. **Binary Types**
+- `bytes` – Immutable sequence of bytes
+- `bytearray` – Mutable sequence of bytes
+- `memoryview` – Memory view object
+
+### 🚫 8. **Special Type**
+- `NoneType` – Represents the absence of a value (`None`)
