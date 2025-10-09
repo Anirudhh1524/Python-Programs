@@ -38,6 +38,51 @@ DIFFERENCE: **modules**, **libraries**, **packages**, and **frameworks**
 | Library    | Collection of modules/packages | You control       | `NumPy`, `Lodash` |
 | Framework  | Full development structure | Framework controls    | `Django`, `React` |
 
+                                                                                               SHORTCUTS FOR VS-CODE
+
+
+Basic Editing
+1.	Cut line: Ctrl + X
+2.	Copy line: Ctrl + C
+3.	Paste: Ctrl + V
+4.	Delete line: Ctrl + Shift + K
+5.	Insert line below: Ctrl + Enter
+6.	Insert line above: Ctrl + Shift + Enter
+7.	Move line up/down: Alt + ↑ / ↓
+8.	Copy line up/down: Shift + Alt + ↑ / ↓
+
+Navigation & Selection
+1.	Go to beginning/end of line: Home / End
+2.	Go to top/bottom of file: Ctrl + Home / End
+3.	Select current line: Ctrl + L
+4.	Select all occurrences of word: Ctrl + F2
+5.	Jump to matching bracket: Ctrl + Shift + \
+
+Formatting & Commenting
+1.	Indent/Outdent line: Ctrl + ] / [
+2.	Comment/Uncomment line(s): Ctrl + /
+3.	Block comment: Ctrl + K, then Ctrl + C
+4.	Unblock comment: Ctrl + K, then Ctrl + U
+
+Python-Specific Shortcuts (with Python extension)
+1.	Run Python file: Ctrl + F5
+2.	Run selected code in terminal: Shift + Enter
+3.	Format document (with Black or autopep8): Shift + Alt + F
+4.	Go to definition: F12
+5.	Peek definition: Alt + F12
+6.	Rename symbol: F2
+
+Explorer & Terminal
+1.	Toggle terminal: Ctrl + `
+2.	Open command palette: Ctrl + Shift + P
+3.	Open settings: Ctrl + ,
+
+You can find the full list of shortcuts and customize them in VS Code via:
+•	File → Preferences → Keyboard Shortcuts
+
+
+
+
 
 
 
