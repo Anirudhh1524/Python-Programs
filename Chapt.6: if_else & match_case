@@ -1,0 +1,84 @@
+
+if-elif-else Statement
+
+This is the classic conditional branching structure in Python.
+x = 10
+
+if x < 0:
+    print("Negative")
+elif x == 0:
+    print("Zero")
+else:
+    print("Positive")
+
+•	 Flexible and widely used
+•	 Can handle complex conditions
+•	 Can get verbose with many branches
+
+if Statement
+Executes a block of code only if a specified condition is true.
+
+x = 10
+if x > 5:
+    print("x is greater than 5")
+
+if-else Statement
+Provides an alternative block of code if the condition is false.
+
+x = 3
+if x == 4:
+    print("Yes")
+else:
+    print("No")
+
+if-elif-else Ladder
+Used when you have multiple conditions to check in sequence.
+
+x = 20
+if x < 10:
+    print("Less than 10")
+elif x < 30:
+    print("Between 10 and 30")
+else:
+    print("30 or more")
+
+Nested if Statements
+An if statement inside another if statement. Useful for hierarchical decision-making.
+
+x = 15
+if x > 10:
+    if x < 20:
+        print("x is between 10 and 20")
+
+
+match-case Statement (Structural Pattern Matching)
+
+
+Introduced in Python 3.10, this is similar to switch in other languages but more powerful.
+x = 10
+
+match x:
+    case 0:
+        print("Zero")
+    case 1 | 2 | 3:
+        print("Small number")
+    case _ if x > 3:
+        print("Large number")
+    case _:
+        print("Unknown")
+
+Key Features:
+•	case _: acts like default in other languages
+•	case _ if condition: adds conditional logic to a match
+•	Supports destructuring and pattern matching (e.g., matching tuples, lists, classes)
+
+When to Use Which?
+Use Case	Prefer
+Simple value comparisons	match-case
+Complex boolean logic	if-elif-else
+Pattern matching (e.g., tuples)	match-case
+Readability with many branches	match-case
+
+
+
+
