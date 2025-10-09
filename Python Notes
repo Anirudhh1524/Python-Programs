@@ -1,35 +1,32 @@
 
-DIFFERENCE: **modules**, **libraries**, **packages**, and **frameworks** 
+DIFFERENCE: modules, libraries, packages, and frameworks
 
 
-### 🧩 Module
-- A **module** is the smallest unit of code reuse.
-- It’s typically a single file (like `math.py`) containing functions, classes, or variables.
-- Used to organize code into logical chunks.
-- **Example**: `os.py`, `random.py` in Python.
+Module
+1. A **module** is the smallest unit of code reuse.
+2. It’s typically a single file (like `math.py`) containing functions, classes, or variables.
+3. Used to organize code into logical chunks.
+Example: `os.py`, `random.py` in Python.
 
-
-### 📚 Library
-- A **library** is a collection of modules or packages that provide specific functionality.
-- You call its functions to perform tasks—**you control the flow**.
+Library
+1. A **library** is a collection of modules or packages that provide specific functionality.
+2. You call its functions to perform tasks—**you control the flow**.
 - **Example**: `NumPy` for numerical computing, `Lodash` in JavaScript.
 
-
-### 📁 Package
-- A **package** is a directory that contains multiple modules and an `__init__.py` file (in Python).
-- It helps organize related modules into a namespace.
-- Can include sub-packages.
+Package
+1. A **package** is a directory that contains multiple modules and an `__init__.py` file (in Python).
+2. It helps organize related modules into a namespace.
+3. Can include sub-packages.
 - **Example**: `requests` package in Python.
 
-
-### 🏗️ Framework
-- A **framework** is a structured platform for building applications.
-- It includes libraries, tools, and rules for development.
-- **It controls the flow**—you fill in the details (known as *Inversion of Control*).
+Framework
+1. A **framework** is a structured platform for building applications.
+2. It includes libraries, tools, and rules for development.
+3. **It controls the flow**—you fill in the details (known as *Inversion of Control*).
 - **Example**: `Django` for web apps in Python, `React` for UI in JavaScript.
 
 
-### 🔍 Summary Table
+Summary Table
 
 | Term       | Scope                      | Control Flow          | Example           |
 |------------|----------------------------|-----------------------|-----------------  |
