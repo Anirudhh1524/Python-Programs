@@ -77,6 +77,30 @@ Explorer & Terminal
 You can find the full list of shortcuts and customize them in VS Code via:
 •	File → Preferences → Keyboard Shortcuts
 
+                                                                                     do_while loop
+
+Python doesn't have a built-in do-while loop like some other languages (e.g., C++, Java), but you can emulate its behavior using a while True loop combined with a break statement. The key idea is to ensure the loop body runs at least once, and then check the condition at the end of each iteration.
+ Simulating a Do-While Loop in Python
+while True:
+    # Code block that should run at least once
+    user_input = input("Enter a positive number: ")
+    number = int(user_input)
+    print(f"You entered: {number}")
+
+    # Condition check to break the loop
+    if number <= 0:
+        break
+ Explanation:
+1.	The loop starts unconditionally (while True).
+2.	The body runs once before any condition is checked.
+3.	After executing, it checks if the condition to continue is met.
+4.	If not, break exits the loop.
+Use Cases
+1.	Validating user input
+2.	Menu-driven programs
+3.	Repeating tasks until a stop condition is met
+
+
 
 
 
