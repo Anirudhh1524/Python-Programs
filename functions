@@ -1,0 +1,39 @@
+                                      
+What Is a Function?
+A function is a named section of a program that performs a specific operation. You define it once and can use (or "call") it multiple times.
+
+How to Define a Function:
+Use the def keyword followed by the function name and parentheses:
+
+def greet():
+    print("Hello, world!")
+
+This defines a function called greet that prints a message.
+
+How to Call a Function:
+Once defined, you can call the function like this:
+
+greet()
+
+Parameters and Arguments:
+Functions can accept input values called parameters:
+
+def greet(name):
+    print(f"Hello, {name}!")
+Call it with an argument:
+greet("Alice")
+
+Return Values:
+Functions can return results using the return keyword:
+
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Output: 8
+
+Built-in vs. User-defined Functions:
+•	Built-in: Python includes many functions like print(), len(), type().
+•	User-defined: You create these using def.
+
+
