@@ -1,0 +1,34 @@
+In Python, a tuple is an immutable, ordered collection of elements. 
+
+Key Characteristics of Tuples
+•	Ordered: Elements maintain their position and can be accessed via indexing.
+•	Immutable: Once created, elements cannot be changed, added, or removed.
+•	Allows duplicates: You can have repeated values.
+•	Defined using parentheses: ( )
+
+Creating Tuples
+# Basic tuple
+my_tuple = (1, 2, 3)
+
+# Mixed data types
+mixed_tuple = (1, "hello", 3.14, True)
+
+# Single-element tuple (note the comma!)
+single_element = (42,)
+
+# Empty tuple
+empty_tuple = ()
+
+Accessing Tuple Elements
+print(my_tuple[0])  # Output: 1
+What You Can't Do
+•	You can't modify elements: my_tuple[0] = 99 → ❌ Error
+•	You can't append or remove items
+
+What You Can Do
+•	Use indexing and slicing
+•	Iterate with loops
+•	Nest tuples
+•	Use them as dictionary keys (because they’re hashable)
+
+
