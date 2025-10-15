@@ -1,0 +1,86 @@
+PEP 8 is the official style guide for Python code, designed to help developers write clean, readable, and consistent code.
+It stands for Python Enhancement Proposal 8, and was authored by Guido van Rossum and others.
+ 
+Key Principles of PEP 8
+Here are some of the most important guidelines:
+
+Code Layout
+•	Use 4 spaces per indentation level (no tabs).
+•	Limit lines to 79 characters.
+•	Use blank lines to separate functions and classes.
+
+Whitespace Rules
+•	Avoid extra spaces inside parentheses, brackets, or braces.
+•	Use a single space after commas, colons, and semicolons.
+•	Surround binary operators with a space: x = y + z
+
+Naming Conventions
+•	Functions and variables: lower_case_with_underscores
+•	Classes: CapitalizedWords
+•	Constants: ALL_CAPS
+•	Avoid single-character names except in counters or iterators.
+
+Comments
+•	Use comments to explain why, not what.
+•	Block comments: use consistent indentation.
+•	Inline comments: separate with at least two spaces from the code.
+ Imports
+•	Imports should be on separate lines.
+•	Group imports: standard libraries, third-party libraries, local modules.
+
+String Quotes
+•	Use single ' or double " quotes consistently.
+•	Triple quotes for docstrings.
+Tools to Enforce PEP 8
+•	flake8: checks for style violations.
+•	black: auto-formats code to follow PEP 8.
+•	pylint: provides detailed feedback on code quality.
+
+
+
+
+
+In Python, a docstring (documentation string) is a special kind of string used to document modules, classes, functions, or methods.
+It helps explain what a piece of code does, making it easier for others (and your future self!) to understand and maintain it.
+
+How to Write a Docstring
+•	Use triple quotes (''' or """)
+•	Place it right after the definition of a function, class, or module
+def greet(name):
+    """This function greets the user by their name."""
+    return f"Hello, {name}!"
+
+Accessing Docstrings
+You can retrieve a docstring using:
+print(greet.__doc__)
+help(greet)
+Types of Docstrings
+•	Single-line docstring: Brief description
+•	def add(a, b):
+•	    """Return the sum of two numbers."""
+•	    return a + b
+•	Multi-line docstring: More detailed explanation
+•	def factorial(n):
+•	    """
+•	    Calculate the factorial of a number.
+•	
+•	    Parameters:
+•	    n (int): Non-negative integer
+•	
+•	    Returns:
+•	    int: Factorial of n
+•	    """
+•	    if n == 0:
+•	        return 1
+•	    else:
+•	        return n * factorial(n - 1)
+
+Best Practices
+•	Start with a summary line.
+•	Use proper grammar and punctuation.
+•	Mention parameters and return values for functions.
+•	Follow PEP 257 for docstring conventions.
+
+
+
+
