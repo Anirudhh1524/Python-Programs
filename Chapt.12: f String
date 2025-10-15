@@ -1,0 +1,30 @@
+f-strings (formatted string literals) are a concise and readable way to embed expressions inside string literals. 
+
+How to Use f-Strings
+•	Prefix the string with f or F
+•	Place variables or expressions inside {}
+name = "Om"
+age = 22
+print(f"Hello, my name is {name} and I'm {age} years old.")
+Output:
+Hello, my name is Om and I'm 22 years old.
+
+Key Features
+•	Inline expressions: You can include calculations or method calls:
+•	x = 10
+•	y = 5
+•	print(f"The sum of x and y is {x + y}")
+•	Date formatting:
+•	from datetime import date
+•	today = date.today()
+•	print(f"Today's date is {today:%B %d, %Y}")
+•	Object representation:
+•	class Person:
+•	    def __str__(self):
+•	        return "Person object"
+•	p = Person()
+•	print(f"This is a {p}")
+•	Debugging with self-documenting expressions (Python 3.8+):
+•	value = 42
+•	print(f"{value=}")  # Output: value=42
+
