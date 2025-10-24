@@ -38,7 +38,6 @@ for key, value in person.items():
     print(f"{key}: {value}")
 ________________________________________
 Method In Dictonary
-
 Useful Methods
 Method	     Description
 keys()	     Returns all keys
@@ -59,4 +58,46 @@ country_capitals = {
     "England": "London"
 }
 print(country_capitals["Canada"])  # Output: Ottawa
+
+___________________________________________
+Looping Through a Dictionary
+
+1. Loop through keys
+person = {"name": "Alice", "age": 30, "city": "New York"}
+
+for key in person:
+    print(key)  # Outputs: name, age, city
+
+2. Loop through values
+for value in person.values():
+    print(value)  # Outputs: Alice, 30, New York
+
+3. Loop through key-value pairs
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# Outputs:
+# name: Alice
+# age: 30
+# city: New York
+
+4. Loop with conditions
+# Print only items where value is a string
+for key, value in person.items():
+    if isinstance(value, str):
+        print(f"{key} is a string: {value}")
+
+5. Nested dictionary loop
+students = {
+    "Alice": {"math": 90, "science": 85},
+    "Bob": {"math": 78, "science": 82}
+}
+
+for name, subjects in students.items():
+    print(f"{name}'s scores:")
+    for subject, score in subjects.items():
+        print(f"  {subject}: {score
+
+
+
 
