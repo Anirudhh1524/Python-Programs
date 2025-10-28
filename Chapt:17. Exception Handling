@@ -1,0 +1,84 @@
+Exception handling in Python allows you to manage errors gracefully, preventing your program from crashing unexpectedly.
+________________________________________
+Basic Structure
+
+Python uses the try...except block to handle exceptions:
+try:
+    # Code that might raise an exception
+except SomeException:
+    # Code that runs if the exception occurs
+You can also use optional else and finally blocks:
+try:
+    # risky code
+except SomeException:
+    # handle error
+else:
+    # runs if no exception occurs
+finally:
+    # always runs, even if exception occurs
+________________________________________
+Common Exception Types
+
+•	ZeroDivisionError: Raised when dividing by zero.
+•	ValueError: Raised when a function receives an argument of the right type but inappropriate value.
+•	TypeError: Raised when an operation is applied to an object of inappropriate type.
+•	FileNotFoundError: Raised when a file or directory is requested but doesn’t exist.
+________________________________________ 
+Example
+
+try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+except ValueError:
+    print("Please enter a valid number.")
+else:
+    print("Result is:", result)
+finally:
+    print("Execution completed.")
+________________________________________
+Advanced Features
+
+•	Catching multiple exceptions: Use a tuple in the except clause. 
+•	except (TypeError, ValueError) as e:
+•	    print(f"Error occurred: {e}")
+•	Raising exceptions manually: Use raise to trigger an exception. 
+•	raise ValueError("Invalid input!")
+•	Custom exceptions: Define your own by subclassing Exception.
+________________________________________
+The finally block in Python is used to define cleanup actions that must be executed under all circumstances—whether an exception is raised or not.
+________________________________________
+Purpose of finally
+
+•	Ensures that important code runs no matter what happens in the try or except blocks.
+•	Commonly used for: 
+o	Closing files
+o	Releasing resources
+o	Ending database connections
+o	Logging final status
+________________________________________
+Example
+
+try:
+    file = open("data.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    file.close()
+    print("File closed.")
+Even if the file doesn't exist and an exception is raised, the finally block will still attempt to close the file and print the message.
+________________________________________
+Key Notes
+
+•	The finally block always executes, even if: 
+o	An exception is not caught
+o	A return, break, or continue is used in the try or except
+o	The program exits with sys.exit() (though in some cases it may not run if the interpreter shuts down)
+
+
+
+
+
+
