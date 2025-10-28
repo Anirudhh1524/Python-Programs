@@ -77,6 +77,41 @@ o	An exception is not caught
 o	A return, break, or continue is used in the try or except
 o	The program exits with sys.exit() (though in some cases it may not run if the interpreter shuts down)
 
+To define custom errors in Python, you create a new class that inherits from the built-in Exception class. This allows you to raise and handle application-specific exceptions with meaningful names and messages.
+________________________________________
+Custom Errors
+🛠 Why Use Custom Exceptions?
+
+Custom exceptions are useful when:
+•	You want more descriptive error messages tailored to your application's logic.
+•	You need to differentiate between different types of errors that aren’t covered by built-in exceptions.
+•	You want to encapsulate additional context or data with the error.
+________________________________________
+How to Define a Custom Exception
+Here's a basic example:
+class MyCustomError(Exception):
+    """Exception raised for a specific custom error."""
+    def __init__(self, message="Something went wrong"):
+        self.message = message
+        super().__init__(self.message)
+
+# Usage
+try:
+    raise MyCustomError("This is a custom error message")
+except MyCustomError as e:
+    print(f"Caught an error: {e}")
+You can also add more attributes to carry extra information:
+class ValidationError(Exception):
+    def __init__(self, field, message):
+        self.field = field
+        self.message = f"Validation failed for {field}: {message}"
+        super().__init__(self.message)
+
+
+
+
+
+
 
 
 
