@@ -1,0 +1,29 @@
+In Python, the import statement is used to bring in modules or specific functions, classes, or variables from those modules so you can use them in your code. 
+
+Basic Syntax
+import module_name
+This imports the entire module. You then access its functions or classes using dot notation:
+
+import math
+print(math.sqrt(16))  # Output: 4.0
+
+Import Specific Items
+from module_name import item_name
+This lets you use the item directly without the module prefix:
+from math import sqrt
+print(sqrt(16))  # Output: 4.0
+
+Aliasing with as
+You can rename modules or items for convenience:
+import numpy as np
+from math import sqrt as square_root
+
+Importing Everything (Not Recommended)
+from module_name import *
+This imports all public names from the module, but can clutter your namespace and cause conflicts.
+
+Dynamic Imports
+You can also import modules dynamically using __import__() or importlib:
+module = __import__('math')
+print(module.sqrt(25))  # Output: 5.0
+
