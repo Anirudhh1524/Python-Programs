@@ -1,0 +1,92 @@
+In Python, a local variable is defined inside a function and accessible only within that function,
+while a global variable is defined outside any function and accessible throughout the entire program.
+
+Understanding Variable Scope in Python
+Python variables have different scopes depending on where they are declared. Here's how local and global variables differ:
+
+🔹 Local Variables
+•	Defined inside a function
+•	Accessible only within that function
+•	Created when the function is called and destroyed when it ends
+
+Example:
+def greet():
+    message = "Hello, world!"  # local variable
+    print(message)
+
+greet()
+# print(message)  # This would raise an error: NameError
+
+🔹 Global Variables
+•	Defined outside any function
+•	Accessible inside and outside functions
+•	Exists throughout the program’s lifetime
+
+Example:
+message = "Hello, world!"  # global variable
+
+def greet():
+    print(message)
+
+greet()
+print(message)
+
+Variable Name Conflicts
+If a local variable has the same name as a global variable, the local one takes precedence inside the function:
+x = "global"
+
+def test():
+    x = "local"
+    print("Inside function:", x)
+
+test()
+print("Outside function:", x)
+Output:
+Inside function: local
+Outside function: global
+
+Using the global Keyword
+To modify a global variable inside a function, use the global keyword:
+count = 0
+
+def increment():
+    global count
+    count += 1
+
+increment()
+print(count)  # Output: 1
+Without global, Python treats count as a local variable and will raise an error if you try to modify it.
+
+
+Key Differences Between Global and Local Variables
+Feature	Global Variable	Local Variable
+
+  Feature	                       Global Variable	                                 Local Variable
+
+1.Defined Where	     Outside all functions      	                          Inside a function
+2.Scope	             Accessible throughout the entire program	              Accessible only within the function it's defined in
+3.Lifetime	         Exists as long as the program runs	                    Created when function is called, destroyed when it ends
+4.Modification	     Requires global keyword inside functions	              Can be modified freely within its function
+5.Use Case	         Shared data across multiple functions	                Temporary data used only within one function
+
+
+Example         
+# Global variable
+count = 0
+
+def increment():
+    # Local variable
+    message = "Incrementing count"
+    global count
+    count += 1
+    print(message, count)
+
+increment()
+print("Final count:", count)
+•	count is global and modified using the global keyword.
+•	message is local and only accessible inside increment().
+
+
+
+
+
