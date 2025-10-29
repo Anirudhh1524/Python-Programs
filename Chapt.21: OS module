@@ -1,0 +1,58 @@
+The os module in Python provides tools to interact with the operating system, including file management, environment variables, and process control.
+Here’s a detailed breakdown of what the os module offers and how you can use it effectively:
+
+What Is the os Module?
+The os module is part of Python’s standard library and allows you to perform operating system-dependent tasks in a portable way. This includes working with directories, files, system paths, and environment variables.
+
+Commonly Used Functions
+Here are some of the most useful functions provided by the os module:
+📁 Directory and File Operations
+•	os.getcwd() – Returns the current working directory.
+•	os.chdir(path) – Changes the current working directory to the specified path.
+•	os.listdir(path) – Lists all files and directories in the given path.
+•	os.mkdir(path) – Creates a new directory.
+•	os.makedirs(path) – Creates intermediate directories as needed.
+•	os.remove(path) – Deletes a file.
+•	os.rmdir(path) – Removes a directory.
+•	os.rename(src, dst) – Renames a file or directory.
+
+🧭 Path Utilities
+•	os.path.join() – Joins one or more path components.
+•	os.path.exists(path) – Checks if a path exists.
+•	os.path.isfile(path) – Checks if a path is a file.
+•	os.path.isdir(path) – Checks if a path is a directory.
+
+🌍 Environment Variables
+•	os.environ – A dictionary representing the user’s environment variables.
+•	os.getenv(key) – Gets the value of an environment variable.
+•	os.putenv(key, value) – Sets the value of an environment variable.
+
+⚙️ Process Management
+•	os.system(command) – Executes a shell command.
+•	os._exit(status) – Exits the process immediately.
+•	os.abort() – Terminates the process with a core dump.
+
+Example Usage
+import os
+
+# Print current working directory
+print("Current Directory:", os.getcwd())
+
+# List contents of current directory
+print("Directory Contents:", os.listdir())
+
+# Create a new folder
+os.mkdir("new_folder")
+
+# Rename the folder
+os.rename("new_folder", "renamed_folder")
+
+# Remove the folder
+os.rmdir("renamed_folder")
+
+
+
+
+
+
+
