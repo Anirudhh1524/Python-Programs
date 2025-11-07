@@ -1,0 +1,32 @@
+In Python, the seek(), tell(), and truncate() methods are used with file objects to manipulate file pointers and file content. Here's a breakdown of each:
+seek(offset, whence=0)
+Moves the file pointer to a specific position.
+•	offset: Number of bytes to move.
+•	whence (optional): Reference point. 
+o	0 (default): Beginning of the file
+o	1: Current file position
+o	2: End of the file
+Example:
+f = open('example.txt', 'rb')
+f.seek(5)        # Move to 5th byte from start
+f.seek(-3, 2)    # Move to 3 bytes before end
+
+tell()
+Returns the current position of the file pointer (in bytes).
+Example:
+f = open('example.txt', 'r')
+print(f.tell())  # Outputs current position
+
+truncate(size=None)
+Resizes the file to the given size in bytes. If size is not specified, it truncates at the current file pointer position.
+Example:
+f = open('example.txt', 'r+')
+f.truncate(10)   # Trims file to 10 bytes
+
+Common Use Case
+with open('example.txt', 'r+') as f:
+    f.seek(0, 2)           # Move to end
+    print(f.tell())        # Show file size
+    f.truncate(5)          # Cut file to 5 bytes
+Would you like a hands-on example or a small exercise to try these out?
+
