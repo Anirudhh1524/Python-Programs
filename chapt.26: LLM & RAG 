@@ -1,0 +1,63 @@
+Great question — let’s break it down clearly 👇
+
+
+🔹 LLM (Large Language Model)
+
+Definition:
+An LLM is a type of artificial intelligence model trained on massive amounts of text data to understand and generate human-like language.
+
+Examples:
+ChatGPT (like me 😊), GPT-5, Claude, Gemini, LLaMA, Mistral, etc.
+
+What it does:
+
+Understands and answers questions
+
+Writes essays, code, or summaries
+
+Translates languages
+
+Analyzes text or data
+
+Acts as a chatbot or virtual assistant
+
+
+How it works (simplified):
+It uses deep learning — specifically transformer architecture — to predict the next word in a sentence, based on everything it has already seen. Over time, after training on billions of words, it learns patterns, grammar, facts, and reasoning.
+
+
+
+🔹 RAG (Retrieval-Augmented Generation)
+
+Definition:
+RAG is a technique that combines an LLM with external knowledge retrieval (like a search engine or database).
+
+Why it’s used:
+LLMs can “forget” or lack recent or domain-specific knowledge (since they’re trained on data up to a point).
+RAG helps them stay accurate and current.
+
+How it works:
+
+1. Retrieve – The system searches a knowledge base (documents, PDFs, websites, databases) for relevant information.
+
+
+2. Augment – The retrieved data is added to the prompt given to the LLM.
+
+
+3. Generate – The LLM uses that data to produce an informed, accurate answer.
+
+
+
+Example:
+You ask: “Summarize our company’s sales report from last week.”
+→ RAG fetches the report from your company’s internal files
+→ The LLM reads it and generates a smart summary.
+
+
+🧠 In Short:
+
+Concept	Full Form	Purpose	Example
+
+LLM	Large Language Model	Understand & generate text	ChatGPT, GPT-5
+RAG	Retrieval-Augmented Generation	Add external knowledge to LLM answers	Chatbot connected to company data
+
