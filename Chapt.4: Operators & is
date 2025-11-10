@@ -104,3 +104,33 @@ print(h)  # Output: "100"
 
 Converting a string to an int or float only works if the string is numeric.
 Converting a float to an int will **truncate** the decimal part, not round it.
+
+
+##"is" keyword
+
+In Python, the is keyword is used to test object identity, not equality. It checks whether two variables point to the same object in memory.
+How the is Keyword Works
+•	Syntax: a is b
+•	Returns True if a and b refer to the same object (i.e., same memory location)
+•	Returns False if they refer to different objects, even if their contents are identical
+ Example
+x = [1, 2, 3]
+y = [1, 2, 3]
+z = x
+
+print(x == y)  # True — same contents
+print(x is y)  # False — different objects
+print(x is z)  # True — same object
+Difference Between is and ==
+Operator	Purpose	Compares	Example Result
+==	Equality	Values	True
+is	Identity	Memory references	False
+Common Use Cases
+•	Checking if a variable is None: 
+•	if my_var is None:
+•	    print("Variable is None")
+•	Comparing singleton objects like True, False, or None
+Important Notes
+•	Python caches small integers and some strings, so is might return True for seemingly separate objects due to internal optimization.
+•	Use == for value comparison and is for identity checks.
+
