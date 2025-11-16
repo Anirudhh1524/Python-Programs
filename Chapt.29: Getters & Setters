@@ -1,0 +1,46 @@
+In Python, getters and setters are methods used to access and modify private attributes of a class in a controlled way. 
+They help enforce encapsulation, allowing you to validate or transform data before it's retrieved or updated.
+
+Why Use Getters and Setters?
+•	Encapsulation: Protect internal object state from unintended changes.
+•	Validation: Ensure only valid data is assigned to attributes.
+•	Abstraction: Hide implementation details from the user.
+•	Flexibility: Change internal implementation without affecting external code.
+Defining Getters and Setters in Python
+Python supports a more elegant way to define getters and setters using the @property decorator.
+ Example:
+class Person:
+    def __init__(self, name):
+        self._name = name  # Conventionally private attribute
+
+    @property
+    def name(self):
+        print("Getting name...")
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        print("Setting name...")
+        if not value:
+            raise ValueError("Name cannot be empty")
+        self._name = value
+
+# Usage
+p = Person("Alice")
+print(p.name)     # Calls getter
+p.name = "Bob"    # Calls setter
+Traditional Getter and Setter (Not Recommended in Python)
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, value):
+        self._name = value
+While this works, Pythonic code prefers the @property approach for cleaner syntax and better readability.
+ Advanced Tools
+•	Descriptors: For reusable getter/setter logic across classes.
+•	__getattr__ and __setattr__: For dynamic attribute access or logging.
+
