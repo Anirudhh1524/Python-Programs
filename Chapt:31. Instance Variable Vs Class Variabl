@@ -1,0 +1,125 @@
+
+In Python, instance variables are tied to a specific object and can differ across instances, 
+while class variables are shared across all instances of the class and maintain a common value unless explicitly overridden.
+
+Key Differences Between Instance and Class Variables
+
+Feature                     	Instance Variables	                  Class Variables
+Definition	Declared inside methods (usually __init__) using self.	Declared directly inside the class but outside any method.
+Scope	      Belong to a single object (instance).	                  Belong to the class itself and shared across all instances.
+Storage	    Each object has its own copy.	                          Only one copy exists, shared by all objects.
+Usage	      Used for attributes unique to each object.            	Used for attributes common to all objects.
+Access	    Accessed via self.variable_name.	                      Accessed via ClassName.variable_name or self.variable_name.
+Modify    	Changing one instance’s variable not affect others.   	Changing via the class affects all instances.
+
+
+ Example in Python
+
+class Dog:
+    # Class variable
+    species = "Canis familiaris"
+
+    def __init__(self, name, age):
+        # Instance variables
+        self.name = name
+        self.age = age
+
+# Create instances
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Lucy", 5)
+
+# Accessing instance variables
+print(dog1.name)   # Buddy
+print(dog2.name)   # Lucy
+
+# Accessing class variable
+print(dog1.species)  # Canis familiaris
+print(dog2.species)  # Canis familiaris
+
+# Modifying instance variable
+dog1.age = 4
+print(dog1.age)  # 4
+print(dog2.age)  # 5
+
+# Modifying class variable
+Dog.species = "Canis lupus"
+print(dog1.species)  # Canis lupus
+print(dog2.species)  # Canis lupus
+
+1. What They Are
+•	Instance Variables
+o	Defined inside methods (commonly __init__) using self.
+o	Each object (instance) gets its own copy.
+o	Used for attributes that differ per object.
+•	Class Variables
+o	Defined directly inside the class body, outside methods.
+o	Shared across all instances of the class.
+o	Used for attributes that should be common to all objects.
+
+2. Storage & Memory
+•	Instance variables are stored in the object’s __dict__.
+Example:
+•	dog1 = Dog("Buddy", 3)
+•	print(dog1.__dict__)  # {'name': 'Buddy', 'age': 3}
+•	Class variables are stored in the class’s __dict__.
+Example:
+•	print(Dog.__dict__['species'])  # 'Canis familiaris'
+
+
+3. Access & Resolution Order
+Python follows a lookup chain when you access an attribute:
+1.	Check the instance’s namespace (obj.__dict__).
+2.	If not found, check the class’s namespace (Class.__dict__).
+3.	If not found, check parent classes (Method Resolution Order, MRO).
+👉 This means if an instance variable has the same name as a class variable, the instance variable overrides it for that object.
+Example:
+class Dog:
+    species = "Canis familiaris"  # class variable
+
+    def __init__(self, name):
+        self.name = name  # instance variable
+
+dog1 = Dog("Buddy")
+dog2 = Dog("Lucy")
+
+dog1.species = "Canis lupus"  # creates an instance variable
+print(dog1.species)  # Canis lupus (instance variable overrides)
+print(dog2.species)  # Canis familiaris (still class variable)
+print(Dog.species)   # Canis familiaris (class unchanged)
+
+4. Modification Behavior
+•	Modifying instance variables affects only that object.
+•	Modifying class variables via the class affects all instances that don’t override it.
+•	Modifying class variables via an instance creates a new instance variable instead of changing the class variable.
+
+5. Practical Use Cases
+•	Instance variables:
+o	Object-specific data (e.g., name, age, balance).
+o	Example: Each Car object has its own color and mileage.
+•	Class variables:
+o	Shared constants (e.g., species, company_name).
+o	Counters or caches (e.g., tracking how many objects have been created).
+Example with a counter:
+class Employee:
+    company = "TechCorp"   # class variable
+    count = 0              # class variable
+
+    def __init__(self, name):
+        self.name = name   # instance variable
+        Employee.count += 1
+
+e1 = Employee("Alice")
+e2 = Employee("Bob")
+
+print(Employee.count)  # 2
+print(e1.company)      # TechCorp
+print(e2.company)      # TechCorp
+
+6. Best Practices
+•	Use instance variables for data unique to each object.
+•	Use class variables for data shared across all objects.
+•	Avoid naming collisions between instance and class variables unless intentional.
+•	Access class variables via the class name (ClassName.var) for clarity.
+
+
+
