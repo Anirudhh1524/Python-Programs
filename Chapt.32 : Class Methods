@@ -1,0 +1,93 @@
+Class Methods as Alternative Constructors
+In Python, class methods are often used to define alternative constructors. This means you can create different ways of instantiating objects beyond the usual __init__ method.
+
+Key Points
+•	A constructor is typically the __init__ method, which initializes an object.
+•	An alternative constructor is a @classmethod that returns an instance of the class, often by processing input data in a different format.
+•	The @classmethod decorator ensures the method receives the class (cls) as its first argument, not the instance (self).
+ 
+Example 1: From String
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    @classmethod
+    def from_string(cls, data_str):
+        name, age = data_str.split(",")
+        return cls(name, int(age))
+
+# Usage
+p1 = Person("Alice", 30)              # normal constructor
+p2 = Person.from_string("Bob,25")     # alternative constructor
+
+
+Example 2: From Dictionary
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+    
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data["title"], data["author"])
+
+# Usage
+book_data = {"title": "1984", "author": "George Orwell"}
+b1 = Book.from_dict(book_data)
+
+Benefits
+•	Flexibility: Multiple ways to create objects.
+•	Readability: Code becomes more expressive (Person.from_string("Bob,25") is clearer than parsing manually).
+•	Encapsulation: Keeps parsing/validation logic inside the class..
+Class methods in Python are methods bound to the class rather than its instances, and they take cls (the class itself) as their first argument instead of self.
+They’re often used for alternative constructors or operations that logically belong to the class.
+
+What Are Class Methods?
+•	Defined using the @classmethod decorator.
+•	Receive the class (cls) as the first parameter.
+•	Can be called on the class itself or on its instances.
+•	Useful when you want to create methods that affect the class as a whole, not just individual objects.
+Syntax
+class MyClass:
+    @classmethod
+    def my_class_method(cls, arg1, arg2):
+        # cls refers to the class
+        return f"Called with {arg1} and {arg2}"
+Usage:
+print(MyClass.my_class_method("Hello", "World"))
+obj = MyClass()
+print(obj.my_class_method("Hi", "There"))
+
+Example: Alternative Constructor
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    @classmethod
+    def from_string(cls, data_str):
+        name, age = data_str.split(",")
+        return cls(name, int(age))
+
+# Normal instantiation
+p1 = Person("Alice", 30)
+
+# Alternative constructor
+p2 = Person.from_string("Bob,25")
+Here, from_string is a class method that provides a different way to construct a Person object.
+When to Use Class Methods
+•	Alternative constructors: e.g., datetime.fromisoformat().
+•	Factory methods: creating instances with pre-defined configurations.
+•	Class-level operations: when logic applies to the class rather than a single instance.
+•	Inheritance-friendly design: since cls refers to the actual subclass, class methods adapt naturally.
+
+Difference from Other Methods
+Method Type	First Argument	Bound To	Typical Use
+Instance Method	self	Object	Access/modify instance data
+Class Method	cls	Class	Alternative constructors, class-wide logic
+Static Method	None	Neither	Utility functions inside class namespace
+
+In short: use @classmethod when you need methods that work with the class itself, not just its instances. 
+They’re especially powerful for creating flexible constructors and factory patterns.
+
