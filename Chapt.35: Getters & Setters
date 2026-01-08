@@ -1,0 +1,98 @@
+In Python, getters and setters are used to control access to class variables.
+They are commonly implemented using the @property decorator.
+
+🔹 Why use Getters & Setters?
+✔ Encapsulation (data hiding)
+✔ Validation before setting values
+✔ Read-only or controlled access
+✔ Cleaner & safer code
+🔹 Basic Example (Without Property – NOT recommended)
+class Person:
+    def __init__(self, age):
+        self.age = age
+❌ Problem: Anyone can set invalid values
+p = Person(-5)
+✅ Correct Way: Using @property (Recommended)
+Getter & Setter Example
+class Person:
+    def __init__(self, age):
+        self._age = age   # protected variable
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            print("Age cannot be negative")
+        else:
+            self._age = value
+Usage:
+p = Person(25)
+print(p.age)     # getter
+
+p.age = 30       # setter
+print(p.age)
+
+p.age = -10      # invalid
+📌 Output:
+25
+30
+Age cannot be negative
+🔹 How it Works (Important)
+p.age        → calls age() getter  
+p.age = 30   → calls age(value) setter
+Looks like variable access but works like methods 🔥
+🔹 Read-Only Property (Only Getter)
+class Product:
+    def __init__(self, price):
+        self._price = price
+
+    @property
+    def price(self):
+        return self._price
+p = Product(100)
+print(p.price)
+p.price = 200  # ❌ Error (no setter)
+🔹 Write-Only Property (Rare)
+class Secret:
+    def __init__(self):
+        self._data = None
+
+    def set_data(self, value):
+        self._data = value
+
+    data = property(fset=set_data)
+🔹 Getter & Setter Without @property (Old Style)
+class Demo:
+    def get_x(self):
+        return self._x
+
+    def set_x(self, value):
+        self._x = value
+
+    x = property(get_x, set_x)
+🔹 Real-Life Example (Bank Account)
+class BankAccount:
+    def __init__(self, balance):
+        self._balance = balance
+
+    @property
+    def balance(self):
+        return self._balance
+
+    @balance.setter
+    def balance(self, amount):
+        if amount < 0:
+            print("Invalid balance")
+        else:
+            self._balance = amount
+            
+🔹 Getters & Setters vs Direct Access
+Direct Variable	Getter & Setter
+No validation	Validation allowed
+Less secure	Encapsulation
+Easy but unsafe	Professional approach
+
+
