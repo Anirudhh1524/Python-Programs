@@ -1,0 +1,79 @@
+In Python, a constructor is a special method used to initialize (set up) an object when a class object is created.
+🔹 What is a Constructor?
+•	A constructor runs automatically when you create an object
+•	It is defined using __init__()
+•	Used to initialize instance variables
+🔹 Syntax of Constructor
+class ClassName:
+    def __init__(self):
+        # initialization code
+🔹 Example: Simple Constructor
+class Person:
+    def __init__(self):
+        print("Constructor called")
+
+p1 = Person()
+📌 Output:
+Constructor called
+🔹 Constructor with Parameters
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+p1 = Person("Anirudha", 25)
+p1.display()
+📌 Output:
+Name: Anirudha
+Age: 25
+🔹 Why use self in Constructor?
+•	self refers to the current object
+•	It stores values inside the object
+•	Each object gets its own copy
+🔹 Types of Constructors in Python
+1️ Default Constructor
+(No parameters except self)
+class Demo:
+    def __init__(self):
+        self.x = 10
+2️ Parameterized Constructor
+class Demo:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+🔹 Constructor Overloading?
+Python does not support multiple constructors directly.
+❌ This will not work:
+def __init__(self):
+def __init__(self, x):
+✅ Use default arguments instead:
+class Demo:
+    def __init__(self, x=0):
+        self.x = x
+🔹 Constructor vs Normal Method
+Constructor (__init__)	Normal Method
+Runs automatically	Called manually
+Initializes object	Performs actions
+Name is fixed	Any name
+
+🔹 Real-life Example (Bank Account)
+class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def show_balance(self):
+        print("Balance:", self.balance)
+        
+🔹 Key Points to Remember
+✔ Constructor name is __init__
+✔ Called once per object creation
+✔ Used to initialize object data
+✔ Uses self keyword
+
