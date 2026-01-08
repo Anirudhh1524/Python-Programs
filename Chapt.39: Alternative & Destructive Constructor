@@ -1,0 +1,77 @@
+In Python, the terms alternative constructor and destructive constructor are often asked in interviews, but they mean different things.
+
+🔹 1  Alternative Constructor
+✅ What is an Alternative Constructor?
+•	A class method used to create objects in different ways
+•	Returns an instance of the class
+•	Implemented using @classmethod
+•	Does not replace __init__, it complements it
+🔹 Why Use Alternative Constructor?
+✔ Create object from different data formats
+✔ Cleaner code
+✔ Better readability
+🔹 Example
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    @classmethod
+    def from_string(cls, data):
+        name, marks = data.split(",")
+        return cls(name, int(marks))
+s1 = Student("Anirudha", 90)
+s2 = Student.from_string("Rahul,85")
+🔹 Another Example (from file / dict)
+@classmethod
+def from_dict(cls, data):
+    return cls(data["name"], data["marks"])
+🔹 Key Points (Alternative Constructor)
+✔ Uses @classmethod
+✔ First argument is cls
+✔ Returns cls(...)
+✔ Used for multiple object creation styles
+
+
+🔹 2  Destructive Constructor
+⚠️ Important Truth
+👉 Python does NOT have a real “destructive constructor”
+What people call a destructive constructor usually refers to:
+•	Destructor → __del__()
+🔹 Destructor (__del__)
+What is Destructor?
+•	Called when an object is destroyed / garbage collected
+•	Used to release resources
+•	Not reliable for critical logic
+🔹 Example
+class Demo:
+    def __init__(self):
+        print("Object created")
+
+    def __del__(self):
+        print("Object destroyed")
+d = Demo()
+del d
+📌 Output:
+Object created
+Object destroyed
+🔹 Real-Life Use Case
+•	Closing files
+•	Releasing DB connections
+•	Cleaning temporary resources
+⚠️ Warning About Destructor
+❌ Execution time is not guaranteed
+❌ Avoid using it for important cleanup
+✔ Use context managers (with) instead
+🔹 Alternative vs Destructor (Comparison)
+Feature	Alternative Constructor	Destructor
+Purpose	Create object differently	Destroy object
+Decorator	@classmethod	None
+Method name	Any name	__del__
+Returns object	✅ Yes	❌ No
+Reliability	High	Low
+
+🔹 Interview Tip 
+👉 If asked “destructive constructor”, clarify politely:
+Python doesn’t have a destructive constructor; it has a destructor (__del__).
+
