@@ -1,0 +1,113 @@
+In Python, inheritance allows one class (child / derived class) to reuse properties and methods of another class (parent / base class).
+🔹 What is Inheritance?
+•	One class acquires features of another class
+•	Promotes code reusability
+•	Supports method overriding
+•	Achieves IS-A relationship
+🔹 Basic Syntax
+class Parent:
+    def parent_method(self):
+        print("This is parent class")
+
+class Child(Parent):
+    def child_method(self):
+        print("This is child class")
+c = Child()
+c.parent_method()
+c.child_method()
+🔹 Example with Constructor Inheritance
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print("Animal makes sound")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)   # call parent constructor
+        self.breed = breed
+
+    def speak(self):
+        print("Dog barks")
+d = Dog("Tommy", "Labrador")
+d.speak()
+print(d.name, d.breed)
+🔹 Types of Inheritance in Python
+1️ Single Inheritance
+class A:
+    pass
+
+class B(A):
+    pass
+2️ Multiple Inheritance
+class A:
+    def show(self):
+        print("A")
+
+class B:
+    def display(self):
+        print("B")
+
+class C(A, B):
+    pass
+3️ Multilevel Inheritance
+class A:
+    pass
+
+class B(A):
+    pass
+
+class C(B):
+    pass
+4 Hierarchical Inheritance
+class A:
+    pass
+
+class B(A):
+    pass
+
+class C(A):
+    pass
+5 Hybrid Inheritance
+Combination of two or more types.
+🔹 super() in Inheritance
+•	Calls parent class methods
+•	Avoids hardcoding parent class name
+class Parent:
+    def show(self):
+        print("Parent")
+
+class Child(Parent):
+    def show(self):
+        super().show()
+        print("Child")
+🔹 Method Overriding
+class Parent:
+    def greet(self):
+        print("Hello from Parent")
+
+class Child(Parent):
+    def greet(self):
+        print("Hello from Child")
+🔹 isinstance() & issubclass()
+isinstance(obj, Class)
+issubclass(Child, Parent)
+🔹 Access Control in Inheritance
+Modifier	Example	Access
+Public	x	Everywhere
+Protected	_x	Child classes
+Private	__x	Same class only
+
+🔹 Real-World Example (Employee)
+class Employee:
+    def __init__(self, name):
+        self.name = name
+
+    def work(self):
+        print("Employee working")
+
+class Manager(Employee):
+    def manage(self):
+        print("Manager managing")
+
