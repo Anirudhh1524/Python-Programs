@@ -1,0 +1,61 @@
+In Python, classes are defined using the class keyword, and self is used to refer to the current object (instance) of that class.
+1️ What is self?
+•	self represents the current object
+•	It allows you to access instance variables and methods
+•	It must be the first parameter of instance methods
+•	Python passes it automatically when you call a method
+2️ Basic class and function using self
+class Person:
+    def __init__(self, name, age):
+        self.name = name    # instance variable
+        self.age = age
+
+    def greet(self):
+        print("Hello, my name is", self.name)
+Usage:
+p1 = Person("Anirudha", 25)
+p1.greet()
+📌 Output:
+Hello, my name is Anirudha
+3 Why self is required?
+Without self, Python doesn’t know which object's data you are referring to.
+❌ Wrong:
+class Test:
+    def show():
+        print("Hello")
+✅ Correct:
+class Test:
+    def show(self):
+        print("Hello")
+
+4️ Example with function modifying data
+class Counter:
+    def __init__(self):
+        self.count = 0
+
+    def increment(self):
+        self.count += 1
+
+    def display(self):
+        print("Count:", self.count)
+c = Counter()
+c.increment()
+c.increment()
+c.display()
+📌 Output:
+Count: 2
+5 self vs normal variable
+class Demo:
+    def __init__(self, x):
+        self.x = x  # instance variable
+
+    def show(self):
+        x = 10      # local variable
+        print(self.x, x)
+📌 Output:
+5 10
+6️ Important Points
+✔ self is not a keyword (you can name it anything, but self is standard)
+✔ Used to access object variables & methods
+✔ Each object has its own self data
+
