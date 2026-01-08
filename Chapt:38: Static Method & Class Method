@@ -1,0 +1,78 @@
+In Python, static methods and class methods are used when a method does not need access to instance data (self).
+🔹 1️ Static Method
+What is a Static Method?
+•	Belongs to the class
+•	Does NOT use self or cls
+•	Works like a normal function, but inside a class
+•	Defined using @staticmethod
+Syntax
+class MyClass:
+    @staticmethod
+    def static_method():
+        print("This is a static method")
+Usage
+MyClass.static_method()
+Example (Utility Function)
+class MathUtils:
+    @staticmethod
+    def add(a, b):
+        return a + b
+print(MathUtils.add(5, 3))
+📌 Output:
+8
+
+
+
+🔹 2️ Class Method
+What is a Class Method?
+•	Uses class reference (cls)
+•	Can access & modify class variables
+•	Defined using @classmethod
+Syntax
+class MyClass:
+    @classmethod
+    def class_method(cls):
+        print("This is a class method")
+Example (Working with Class Variables)
+class Employee:
+    company = "TCS"   # class variable
+
+    def __init__(self, name):
+        self.name = name
+
+    @classmethod
+    def change_company(cls, new_company):
+        cls.company = new_company
+e1 = Employee("Anirudha")
+Employee.change_company("Infosys")
+print(e1.company)
+📌 Output:
+Infosys
+🔹 Difference Between Static Method & Class Method
+Feature	Static Method	Class Method
+Decorator	@staticmethod	@classmethod
+First Parameter	None	cls
+Access class variables	❌ No	✅ Yes
+Access instance variables	❌ No	❌ No
+Use case	Utility/helper	Modify class data
+
+🔹 When to Use What?
+✔ Use static method when:
+•	Logic is related to class
+•	No need for class or instance data
+✔ Use class method when:
+•	Need to access or modify class variables
+•	Alternative constructor needed
+🔹 Class Method as Alternative Constructor
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    @classmethod
+    def from_string(cls, data):
+        name, marks = data.split(",")
+        return cls(name, int(marks))
+s = Student.from_string("Rahul,85")
+print(s.name, s.marks)
+
